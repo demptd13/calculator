@@ -1,0 +1,115 @@
+// reset
+@import "reset";
+@import "mixin";
+
+@font-face {
+  font-family: "San Francisco Pro Display Light";
+  src: url("/fonts/SFProDisplay-Light.eot");
+  src: url("/fonts/SFProDisplay-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/SFProDisplay-Light.woff") format("woff"),
+    url("/fonts/SFProDisplay-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'San Francisco Pro Display Light';
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  @include flexbox();
+  flex-direction: column;
+  background-color: rgb(90, 90, 90);
+}
+
+.container {
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
+
+.calc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  &__block {
+    margin: 0 auto;
+    height: 700px;
+    width: 375px;
+    background-color: #000;
+    border-radius: 30px;
+  }
+  &__time {
+    color: #fff;
+    margin: 20px 0 0 25px;
+    font-weight: 600;
+  }
+}
+
+.display__block {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.result {
+  color: #fff;
+  margin-right: 35px;
+  margin-bottom: 20px;
+  font-size: 75px;
+}
+
+.buttons__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.digit {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgb(41, 40, 40);
+  transition: all .3s;
+  &:hover {
+    background-color: rgb(71, 71, 71);
+  }
+
+  &-big {
+    font-size: 35px;
+    height: 70px;
+    width: 160px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 30px;
+  }
+  &-grey {
+    color: #000;
+    background-color: rgb(196, 194, 194);
+    &:hover {
+      background-color: rgb(221, 219, 219);
+    }
+  }
+  &-orange {
+    color: #fff;
+    background-color: rgba(255, 136, 0, 0.979);
+    &:hover {
+       background-color: rgba(255, 157, 45, 0.979);
+    }
+    
+  }
+}
