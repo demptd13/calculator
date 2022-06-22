@@ -12,7 +12,7 @@ let result = document.querySelector(".result");
 
 
 const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ","];
-const operators = ["÷", "x", "+", "-", "%"];
+const operators = ["÷", "x", "+", "-"];
 const negative = document.querySelector(".digit-negative").textContent;
 const percent = document.querySelector(".digit-percent").textContent;
 
@@ -29,12 +29,17 @@ let allButtons = document.querySelectorAll(".digit");
 
 for (const button of allButtons) {
   button.addEventListener("click", function (event) {
-    result.textContent = '';
     const key = event.target.textContent;
+    if (firstNumber != '' && key === "%") {
+      firstNumber /= 100;
+      result.textContent = firstNumber;
+    }
+    else {
+      result.textContent = '';
+    }
     if (button == clearBtn && clearBtn.textContent === "C") {
       clearBtn.textContent = "AC"
       clearAll()
-      console.log("clear")
     }
     if (digits.includes(key)) {
       clearBtn.textContent = "C"
@@ -42,7 +47,7 @@ for (const button of allButtons) {
         firstNumber += key;
         result.textContent = firstNumber;
       }
-      else if (firstNumber != '' && secondNumber != '' && end) {
+      else if (firstNumber != '' && secondNumber != '' && end && key != "%") {
         secondNumber = key;
         end = false;
         result.textContent = secondNumber;
@@ -50,6 +55,7 @@ for (const button of allButtons) {
       else {
         secondNumber += key;
         result.textContent = secondNumber;
+
       }
     }
     if (operators.includes(key)) {
