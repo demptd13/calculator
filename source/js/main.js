@@ -11,7 +11,7 @@ let end = false;
 let result = document.querySelector(".result");
 
 
-const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ","];
+const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 const operators = ["÷", "x", "+", "-"];
 const negative = document.querySelector(".digit-negative").textContent;
 const percent = document.querySelector(".digit-percent").textContent;
