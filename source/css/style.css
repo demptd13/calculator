@@ -146,7 +146,11 @@ main {
   color: #fff;
   margin-right: 35px;
   margin-bottom: 20px;
+  margin-left: 25px;
   font-size: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
 }
 
 .buttons__block {
@@ -196,6 +200,10 @@ main {
   border-radius: 30px;
   font-weight: 600;
   text-align: left;
+  padding-left: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding-left: 30px;
 }
 .digit-grey {
@@ -211,4 +219,7 @@ main {
 }
 .digit-orange:hover {
   background-color: rgba(255, 157, 45, 0.979);
+}
+.digit-x {
+  padding-bottom: 5px;
 }
