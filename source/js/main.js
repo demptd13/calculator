@@ -59,6 +59,7 @@ for (const button of allButtons) {
       }
     }
     if (operators.includes(key)) {
+      clearBtn.textContent = "C"
       operator = key;
       return;
     }
